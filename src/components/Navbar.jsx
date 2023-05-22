@@ -1,21 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
 
 import "../assets/css/navbar-styles.css";
 import "../assets/css/responsive-nav.css";
 
-export default function Navbar() {
+export default function SiteNavbar() {
   return (
     <header>
-      <nav className="navbar navbar-header-lg header-nav">
+      <Navbar className="header-nav" expand="lg">
         <div className="navbar-header">
-          <Link to="/" className="navbar-brand logo">
-            <h3>
-              My <strong>Project Name</strong>
-            </h3>
-          </Link>
+          <Navbar.Brand to="/" className="logo">
+            My <strong>Project Name</strong>
+          </Navbar.Brand>
         </div>
-        <div className="main-menu-wrapper">
-          <ul className="main-nav">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse className="main-menu-wrapper" id="basic-navbar-nav">
+          <Nav className="main-nav">
             <li className="active">
               <NavLink to="#page1">Page 1</NavLink>
             </li>
@@ -39,12 +39,10 @@ export default function Navbar() {
             <li>
               <NavLink to="#page4">Page 4</NavLink>
             </li>
-            <Link to="#login">
-              <button className="header-btn">Sign In / Sign Up</button>
-            </Link>
-          </ul>
-        </div>
-      </nav>
+            <button className="header-btn">Sign In / Sign Up</button>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </header>
   );
 }

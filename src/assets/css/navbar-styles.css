@@ -19,6 +19,10 @@
   color: #f26438;
 }
 
+.main-menu-wrapper.navbar-collapse {
+  flex-grow: initial;
+}
+
 .main-menu-wrapper .main-nav {
   display: flex;
   list-style: none;
